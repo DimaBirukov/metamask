@@ -6,9 +6,10 @@ jobs:
    steps:
      - name: Checkout GitCode
        uses: actions/checkout@v2
- 
-     - name: Run Cypress Test
-       uses: cypress-io/github-action@v4
+     - uses: actions/checkout@v4
+     - name: Setup node
+       uses: actions/setup-node@v4
        with:
-         command: npm test
-         browser: chrome
+         node-version: 18
+     - run: npm install
+     - run: npm test
