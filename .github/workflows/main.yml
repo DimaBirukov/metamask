@@ -13,4 +13,5 @@ jobs:
        env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
      - run: npm install
+     - run: echo $PRIVATE_KEY
      - run: PRIVATE_KEY=$PRIVATE_KEY npm test
