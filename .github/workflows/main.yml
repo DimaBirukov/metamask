@@ -13,9 +13,17 @@ jobs:
        with:
          node-version: 18
      - run: npm install
+     - name: Install linux deps
+       run: |
+          sudo apt-get install --no-install-recommends -y \
+          fluxbox \
+          xvfb
      # - run: npx browserslist@latest --update-db
      # - run: echo ${{ vars.PRIVATE_KEY }}
-     - run: PRIVATE_KEY=${{ vars.PRIVATE_KEY }} CYPRESS_baseUrl=${{ vars.CYPRESS_BASEURL }} npm test
+     - run: |
+          Xvfb :0 -screen 0 1024x768x24 -listen tcp -ac &
+          fluxbox &
+          PRIVATE_KEY=${{ vars.PRIVATE_KEY }} CYPRESS_baseUrl=${{ vars.CYPRESS_BASEURL }} npm test
      # - name: run cypress tests with chrome
        # uses: cypress-io/github-action@v6
        # with:
