@@ -11,7 +11,7 @@ jobs:
        with:
          node-version: 18
        env:
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-     - run: npm install
-     - run: echo $PRIVATE_KEY
+          PRIVATE_KEY: ${{ vars.PRIVATE_KEY }}
+     # - run: npm install
+     - run: echo ${{ vars.PRIVATE_KEY }}
      - run: PRIVATE_KEY=$PRIVATE_KEY npm test
