@@ -1,0 +1,21 @@
+{
+    "name": "cypress-metamask",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "dotenv -c -- synpress run --config numTestsKeptInMemory=1 -r cypress-mochawesome-reporter"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@synthetixio/synpress": "^1.2.0",
+        "cypress": "^13.6.1",
+        "dotenv-cli": "^6.0.0"
+    },
+    "devDependencies": {
+        "cypress-mochawesome-reporter": "^3.7.0",
+        "mocha": "^5.2.0",
+        "prettier": "^2.6.1"
+    }
+}
