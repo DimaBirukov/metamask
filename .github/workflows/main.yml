@@ -14,12 +14,11 @@ jobs:
      # - run: npx browserslist@latest --update-db
      # - run: echo ${{ vars.PRIVATE_KEY }}
      # - run: PRIVATE_KEY=${{ vars.PRIVATE_KEY }} CYPRESS_baseUrl=${{ vars.CYPRESS_BASEURL }} npm test
-     - name: Run e2e tests (cypress-action)
-       uses: cypress-io/github-action@v6.5.0
+     - name: run cypress tests with chrome
+       uses: cypress-io/github-action@v6
        with:
-          command: npm test
           browser: chrome
-          spec: tests/e2e/specs/*
+          spec: tests/e2e/specs
        env:
         PRIVATE_KEY: ${{ vars.PRIVATE_KEY }}
         CYPRESS_baseUrl: ${{ vars.CYPRESS_BASEURL }}
