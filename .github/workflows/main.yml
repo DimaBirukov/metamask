@@ -17,6 +17,7 @@ jobs:
      - name: run cypress tests with chrome
        uses: cypress-io/github-action@v6
        with:
+          install-command: npm --frozen-lockfile --non-interactive
           browser: chrome
           spec: tests/e2e/specs
        env:
