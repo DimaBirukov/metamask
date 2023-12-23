@@ -9,17 +9,19 @@ jobs:
      - name: Setup node
        uses: actions/setup-node@v4
        with:
+         cache: 'npm'
          node-version: 18
-     # - run: npm install --frozen-lockfile --prefer-offline
+         cache-dependency-path: subdir/package-lock.json
+     - run: npm install
      # - run: npx browserslist@latest --update-db
      # - run: echo ${{ vars.PRIVATE_KEY }}
-     # - run: PRIVATE_KEY=${{ vars.PRIVATE_KEY }} CYPRESS_baseUrl=${{ vars.CYPRESS_BASEURL }} npm test
-     - name: run cypress tests with chrome
-       uses: cypress-io/github-action@v6
-       with:
-          install-command: npm --frozen-lockfile --non-interactive
-          browser: chrome
-          spec: tests/e2e/specs
-       env:
-        PRIVATE_KEY: ${{ vars.PRIVATE_KEY }}
-        CYPRESS_baseUrl: ${{ vars.CYPRESS_BASEURL }}
+     - run: PRIVATE_KEY=${{ vars.PRIVATE_KEY }} CYPRESS_baseUrl=${{ vars.CYPRESS_BASEURL }} npm test
+     # - name: run cypress tests with chrome
+     #   uses: cypress-io/github-action@v6
+     #   with:
+     #      install-command: npm --frozen-lockfile --non-interactive
+     #      browser: chrome
+     #      spec: tests/e2e/specs
+     #   env:
+     #    PRIVATE_KEY: ${{ vars.PRIVATE_KEY }}
+     #    CYPRESS_baseUrl: ${{ vars.CYPRESS_BASEURL }}
