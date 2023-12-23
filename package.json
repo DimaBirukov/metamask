@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "dotenv -c -- synpress run --config numTestsKeptInMemory=1 -r cypress-mochawesome-reporter"
+        "test": "dotenv -c -- synpress run --config numTestsKeptInMemory=1 -r cypress-mochawesome-reporter --browser chromium"
     },
     "author": "",
     "license": "ISC",
