@@ -9,7 +9,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@synthetixio/synpress": "latest",
+        "@synthetixio/synpress": "3.7.1",
         "cypress": "^13.6.1",
         "dotenv-cli": "^6.0.0"
     },
