@@ -17,10 +17,7 @@ jobs:
      - name: Run e2e tests (cypress-action)
        uses: cypress-io/github-action@v6.5.0
        with:
-          start: pnpm start:server
-          command: pnpm test:e2e:ci:cypress-action
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
+          command: npm test
           browser: chrome
           spec: tests/e2e/specs/*
        env:
