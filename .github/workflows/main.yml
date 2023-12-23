@@ -10,8 +10,6 @@ jobs:
        uses: actions/setup-node@v4
        with:
          node-version: 18
-       env:
-          PRIVATE_KEY: ${{ vars.PRIVATE_KEY }}
-     # - run: npm install
+     - run: npm install
      - run: echo ${{ vars.PRIVATE_KEY }}
-     - run: PRIVATE_KEY=$PRIVATE_KEY npm test
+     - run: PRIVATE_KEY=${{ vars.PRIVATE_KEY }} npm test
